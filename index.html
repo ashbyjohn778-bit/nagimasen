@@ -530,57 +530,137 @@ our community while ensuring the highest quality in every bite.
 
 <!-- Features Section -->
 <section class="features">
-<h2>Why Choose NAGIMASEN?</h2>
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-icon">🥬</div>
-<h3 class="feature-title">Fresh & Healthy</h3>
-<p class="feature-description">
-Locally-sourced vegetables rich in essential vitamins, providing nutritious alternatives to processed snacks
-</p>
-</div>
+  <h2>Why Choose NAGIMASEN?</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🥬</div>
+      <h3 class="feature-title">Fresh & Healthy</h3>
+      <p class="feature-description">
+        Locally-sourced vegetables rich in essential vitamins, providing nutritious alternatives to processed snacks.
+      </p>
+    </div>
 
-<div class="feature-card">
-<div class="feature-icon">🍱</div>
-<h3 class="feature-title">Unique Fusion</h3>
-<p class="feature-description">
-Authentic Filipino Pinakbet meets Japanese sushi-making techniques for a one-of-a-kind culinary experience
-</p>
-</div>
+    <div class="feature-card">
+      <div class="feature-icon">🍱</div>
+      <h3 class="feature-title">Unique Fusion</h3>
+      <p class="feature-description">
+        Authentic Filipino Pinakbet meets Japanese sushi-making techniques for a one-of-a-kind culinary experience.
+      </p>
+    </div>
 
-<div class="feature-card">
-<div class="feature-icon">💰</div>
-<h3 class="feature-title">Student-Friendly Pricing</h3>
-<p class="feature-description">
-Affordable pricing designed for student budgets without compromising quality or taste
-</p>
-</div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3 class="feature-title">Student-Friendly Pricing</h3>
+      <p class="feature-description">
+        Affordable pricing designed for student budgets without compromising quality or taste.
+      </p>
+    </div>
 
-<div class="feature-card">
-<div class="feature-icon">📸</div>
-<h3 class="feature-title">Instagram-Worthy</h3>
-<p class="feature-description">
-Vibrant colors and beautiful presentation perfect for sharing on social media
-</p>
-</div>
+    <div class="feature-card">
+      <div class="feature-icon">📸</div>
+      <h3 class="feature-title">Instagram-Worthy</h3>
+      <p class="feature-description">
+        Vibrant colors and beautiful presentation perfect for sharing on social media.
+      </p>
+    </div>
 
-<div class="feature-card">
-<div class="feature-icon">🌱</div>
-<h3 class="feature-title">Sustainable</h3>
-<p class="feature-description">
-Committed to environmental consciousness with our vegetable waste composting program
-</p>
-</div>
+    <div class="feature-card">
+      <div class="feature-icon">🌱</div>
+      <h3 class="feature-title">Sustainable</h3>
+      <p class="feature-description">
+        Committed to environmental consciousness with our vegetable waste composting program.
+      </p>
+    </div>
 
-<div class="feature-card">
-<div class="feature-icon">👨‍🍳</div>
-<h3 class="feature-title">Made Fresh Daily</h3>
-<p class="feature-description">
-Every order is prepared fresh to ensure optimal taste and quality
-</p>
-</div>
-</div>
+    <div class="feature-card">
+      <div class="feature-icon">👨‍🍳</div>
+      <h3 class="feature-title">Made Fresh Daily</h3>
+      <p class="feature-description">
+        Every order is prepared fresh to ensure optimal taste and quality.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">👨‍🌾</div>
+      <h3 class="feature-title">Social Responsibility</h3>
+      <p class="feature-description">
+        We actively support local Filipino farmers and sustainable practices to promote a healthier community.
+      </p>
+    </div>
+
+    <!-- New Feature Added -->
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3 class="feature-title">Fast Service</h3>
+      <p class="feature-description">
+        Quick and efficient service ensures you enjoy your meal fresh without the long wait.
+      </p>
+    </div>
+  </div>
 </section>
+
+<style>
+.features {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #000;
+  color: #fff;
+}
+
+.features h2 {
+  font-size: 2rem;
+  color: #dc2626;
+  margin-bottom: 2rem;
+}
+
+/* Responsive grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Center content when only one card in the row */
+.features-grid > .feature-card:only-child {
+  justify-self: center;
+  align-self: center;
+}
+
+/* Feature card design */
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #dc2626;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+</style>
 
 <div class="chinese-border"></div>
 
