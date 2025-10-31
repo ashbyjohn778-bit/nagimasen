@@ -1,69 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAGIMASEN - One Bite, A Thousand Flavors</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAGIMASEN - One Bite, A Thousand Flavors</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
+body {
+font-family: 'Arial', sans-serif;
+background: #000;
+color: #fff;
+overflow-x: hidden;
+}
 
-        /* Header/Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            border-bottom: 2px solid #dc2626;
-        }
+/* Header/Navigation */
+header {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(0, 0, 0, 0.95);
+padding: 1rem 2rem;
+z-index: 1000;
+border-bottom: 2px solid #dc2626;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #dc2626;
-            letter-spacing: 2px;
-        }
+.logo {
+font-size: 1.8rem;
+font-weight: bold;
+color: #dc2626;
+letter-spacing: 2px;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+.logo img {
+height: 50px;
+vertical-align: middle;
+}
 
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
+.nav-links {
+display: flex;
+gap: 2rem;
+list-style: none;
+}
 
-        .nav-links a:hover {
-            color: #dc2626;
-        }
+.nav-links a {
+color: #fff;
+text-decoration: none;
+transition: color 0.3s;
+font-weight: 500;
+}
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
+.nav-links a:hover {
+color: #dc2626;
+}
+
+/* Hero Section */
+.hero {
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(220, 38, 38, 0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+opacity: 0.3;
+}
+
+.hero-content {
+text-align: center;
+z-index: 1;
+padding: 2rem;
+}
+
+.hero h1 {
+font-size: 4rem;
+margin-bottom: 1rem;
+color: #dc2626;
+text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+letter-spacing: 3px;
+}
+
+.hero p {
+font-size: 1.5rem;
+margin-bottom: 2rem;
+color: #e5e5e5;
+}
+
+.tagline {
+font-style: italic;
+font-size: 1.2rem;
+color: #fbbf24;
+margin-top: 1rem;
+}
+
+.cta-button {
+display: inline-block;
+padding: 1rem 3rem;
+background: #dc2626;
+color: #fff;
+text-decoration: none;
+font-size: 1.1rem;
+font-weight: bold;
+border-radius: 5px;
+transition: all 0.3s;
+border: 2px solid #dc2626;
+}
+
+.cta-button:hover {
+background: transparent;
+transform: translateY(-3px);
+box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+}
+
+/* Products Section */
+.products {
+padding: 5rem 2rem;
+background: #0a0a0a;
+}
+
+.products h2 {
+text-align: center;
+font-size: 3rem;
+margin-bottom: 3rem;
+color: #dc2626;
+}
+
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+gap: 3rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.product-card {
+background: #1a1a1a;
+border-radius: 15px;
+overflow: hidden;
+transition: transform 0.3s;
+border: 2px solid #dc2626;
+position: relative;
+}
+
+.product-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+}
+
+.product-image {
+width: 100%;
+height: 400px;
+object-fit: cover;
+border-bottom: 2px solid #dc2626;
+}
+
+.product-info {
+padding: 2rem;
+}
+
+.product-name {
+font-size: 2rem;
+font-weight: bold;
+margin-bottom: 1rem;
+color: #fff;
+}
+
+.product-description {
+font-size: 1.1rem;
+line-height: 1.6;
+color: #d1d5db;
+margin-bottom: 1.5rem;
+}
+
+.product-price {
+font-size: 2.5rem;
+font-weight: bold;
+color: #dc2626;
+position: absolute;
+top: 20px;
+right: 20px;
+background: rgba(0, 0, 0, 0.8);
+padding: 0.5rem 1.5rem;
+border-radius: 50px;
+border: 2px solid #dc2626;
+}
+
+/* About Section */
+.about {
+padding: 5rem 2rem;
+background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+}
+
+.about-content {
+max-width: 900px;
+margin: 0 auto;
+text-align: center;
+}
+
+.about h2 {
+font-size: 3rem;
+margin-bottom: 2rem;
+color: #dc2626;
+}
+
+.about p {
+font-size: 1.2rem;
+line-height: 1.8;
+color: #d1d5db;
+margin-bottom: 1.5rem;
+}
+
+/* Features Section */
+.features {
+padding: 5rem 2rem;
+background: #0a0a0a;
+}
+
+.features h2 {
+text-align: center;
+font-size: 3rem;
+margin-bottom: 3rem;
+color: #dc2626;
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.feature-card {
+background: #1a1a1a;
+padding: 2rem;
+border-radius: 10px;
+text-align: center;
+border: 2px solid #dc2626;
+transition: all 0.3s;
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+.feature-icon {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+
+.feature-title {
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 1rem;
+color: #fff;
+}
+
+.feature-description {
+color: #d1d5db;
+line-height: 1.6;
+}
+
+/* Contact Section */
+.contact {
+padding: 5rem 2rem;
+background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+}
+
+.contact h2 {
+text-align: center;
+font-size: 3rem;
+margin-bottom: 3rem;
+color: #dc2626;
+}
+
+.contact-content {
+max-width: 800px;
+margin: 0 auto;
+text-align: center;
+}
+
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.contact-item {
+font-size: 1.2rem;
+color: #d1d5db;
+}
+
+.contact-item strong {
+color: #dc2626;
+}
+
+.social-links {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-top: 2rem;
+}
+
+.social-links a {
+color: #fff;
+font-size: 2rem;
+transition: color 0.3s;
+}
+
+.social-links a:hover {
+color: #dc2626;
+}
+
+/* Footer */
+footer {
+background: #000;
+padding: 2rem;
+text-align: center;
+border-top: 2px solid #dc2626;
+}
+
+footer p {
+color: #9ca3af;
+}
+
+/* Decorative Elements */
+.chinese-border {
+height: 20px;
+background: repeating-linear-gradient(
+90deg,
+#dc2626 0px,
+#dc2626 20px,
+transparent 20px,
+transparent 40px
+);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.hero h1 {
+font-size: 2.5rem;
+}
+
+.hero p {
+font-size: 1.2rem;
+}
+
+.product-grid {
+grid-template-columns: 1fr;
+}
+
+.nav-links {
+display: none;
+}
+
+.features-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Cherry Blossom Animation */
+.cherry-blossom {
+position: absolute;
+width: 30px;
+height: 30px;
+background: rgba(255, 192, 203, 0.6);
+border-radius: 50%;
+animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+0% {
+top: -50px;
+transform: translateX(0) rotate(0deg);
+}
+100% {
+top: 100vh;
+transform: translateX(100px) rotate(360deg);
+}
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header>
+<nav>
+<div class="logo">
+<img src="https://i.imgur.com/Kgqlbih.jpeg" alt="NAGIMASEN Logo">
+</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+<div class="hero-content">
+<h1>NAGIMASEN</h1>
+<p>Filipino-Japanese Fusion Cuisine</p>
+<p class="tagline">"One Bite, A Thousand Flavors"</p>
+<a href="#products" class="cta-button">Explore Our Menu</a>
+</div>
+</section>
+
+<div class="chinese-border"></div>
+
+<!-- Products Section -->
+<section id="products" class="products">
+<h2>Our Menu</h2>
+<div class="product-grid">
+<!-- Pinakbet Sushi Roll -->
+<div class="product-card">
+<img src="https://i.imgur.com/1lheaAj.jpeg" alt="Pinakbet Sushi Roll" class="product-image">
+<div class="product-price">₱99</div>
+<div class="product-info">
+<h3 class="product-name">PINAKBET SUSHI ROLL</h3>
+<p class="product-description">
+Experience the unique fusion of traditional Filipino Pinakbet vegetables wrapped in premium Japanese sushi.
+Each pack contains 9 pieces featuring fresh squash, string beans, okra, and eggplant from local markets,
+wrapped in authentic yakinori seaweed and seasoned Japanese rice. Rich in Vitamins A, C, K, E, and B6.
+</p>
+<p class="product-description" style="color: #fbbf24; font-weight: bold;">
+9 pieces per pack | Freshly made to order
+</p>
+</div>
+</div>
+
+<!-- Virgin Blue Lagoon -->
+<div class="product-card">
+<img src="https://i.imgur.com/zUls8XM.jpeg" alt="Virgin Blue Lagoon" class="product-image">
+<div class="product-price">₱45</div>
+<div class="product-info">
+<h3 class="product-name">VIRGIN BLUE LAGOON</h3>
+<p class="product-description">
+A refreshing tropical beverage featuring our signature blue lemonade blend.
+This Instagram-worthy drink combines Sprite, blue curaçao syrup, and blue lemonade concentrate,
+served ice-cold in a generous 22oz cup. The perfect companion to our savory Pinakbet Sushi Roll.
+</p>
+<p class="product-description" style="color: #fbbf24; font-weight: bold;">
+22oz serving | Refreshing & vibrant
+</p>
+</div>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 3rem;">
+<p style="font-size: 1.5rem; color: #fbbf24; font-weight: bold;">
+COMBO MEAL: ₱144 (Save on the perfect pairing!)
+</p>
+</div>
+</section>
+
+<div class="chinese-border"></div>
+
+<!-- About Section -->
+<section id="about" class="about">
+<div class="about-content">
+<h2>About NAGIMASEN</h2>
+<p>
+NAGIMASEN is a student-run food business from Mataas Na Paaralang Neptali A. Gonzales (MPNAG)
+that brings together the best of Filipino and Japanese cuisine. Our name embodies our mission:
+delivering "one bite, a thousand flavors."
+</p>
+<p>
+We believe in offering innovative, nutritious, and culturally-authentic food experiences.
+Our Pinakbet Sushi Roll celebrates Filipino heritage while embracing Japanese culinary techniques,
+creating a unique fusion that appeals to health-conscious students and food enthusiasts alike.
+</p>
+<p>
+All our ingredients are sourced fresh from local markets in Mandaluyong City, supporting
+our community while ensuring the highest quality in every bite.
+</p>
+</div>
+</section>
+
+<div class="chinese-border"></div>
+
+<!-- Features Section -->
+<section class="features">
+<h2>Why Choose NAGIMASEN?</h2>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🥬</div>
+<h3 class="feature-title">Fresh & Healthy</h3>
+<p class="feature-description">
+Locally-sourced vegetables rich in essential vitamins, providing nutritious alternatives to processed snacks
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🍱</div>
+<h3 class="feature-title">Unique Fusion</h3>
+<p class="feature-description">
+Authentic Filipino Pinakbet meets Japanese sushi-making techniques for a one-of-a-kind culinary experience
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">💰</div>
+<h3 class="feature-title">Student-Friendly Pricing</h3>
+<p class="feature-description">
+Affordable pricing designed for student budgets without compromising quality or taste
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">📸</div>
+<h3 class="feature-title">Instagram-Worthy</h3>
+<p class="feature-description">
+Vibrant colors and beautiful presentation perfect for sharing on social media
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🌱</div>
+<h3 class="feature-title">Sustainable</h3>
+<p class="feature-description">
+Committed to environmental consciousness with our vegetable waste composting program
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">👨‍🍳</div>
+<h3 class="feature-title">Made Fresh Daily</h3>
+<p class="feature-description">
+Every order is prepared fresh to ensure optimal taste and quality
+</p>
+</div>
+</div>
+</section>
+
+<div class="chinese-border"></div>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+<h2>Visit Us</h2>
+<div class="contact-content">
+<div class="contact-info">
+<div class="contact-item">
+<strong>Location:</strong> Mataas Na Paaralang Neptali A. Gonzales (MPNAG)<br>
+Nueve de Pebrero St., Brgy. Mauway, Mandaluyong City
+</div>
+<div class="contact-item">
+<strong>Operating Hours:</strong> 8:30 AM - 4:00 PM (School Days Only)<br>
+Peak Service: 9-10 AM | 12-1 PM | 3-4 PM
+</div>
+<div class="contact-item">
+<strong>Contact:</strong> Available during operating hours at our stall
+</div>
+</div>
+
+<div class="social-links">
+<a href="#" title="Instagram">📷</a>
+<a href="#" title="Facebook">📘</a>
+<a href="#" title="TikTok">🎵</a>
+</div>
+
+<p style="margin-top: 2rem; color: #fbbf24; font-size: 1.2rem;">
+Follow us on social media: @nagimasen_mpnag
+</p>
+</div>
+</section>
+
+<div class="chinese-border"></div>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2025 NAGIMASEN. All rights reserved.</p>
+<p style="margin-top: 0.5rem; font-style: italic;">
+A Student Entrepreneur's Cup 2025 Project by MPNAG
+</p>
+</footer>
+</body>
+</html>            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
